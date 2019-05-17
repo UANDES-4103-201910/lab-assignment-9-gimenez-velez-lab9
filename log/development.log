@@ -3053,3 +3053,167 @@ true by adding the following to your application.rb file:
 
   Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
  (called from <top (required)> at /home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+Started GET "/sign_in" for ::1 at 2019-05-16 23:08:49 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/views/registrations/new.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+... "Sign in",redirect_to root_url);@output_buffer.safe_append='
+...                       ^~~~~~~~):
+  
+app/views/registrations/new.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+Started GET "/" for ::1 at 2019-05-16 23:19:09 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 559ms (Views: 557.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 23:19:12 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 85ms (Views: 83.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for ::1 at 2019-05-16 23:19:13 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RiTJDVNwgpXbJeBwadGDtF3j+yVamD4roThjGFcw3H04yvnJgjDeMWth50K7sgdIEjwsvqjicXG9OnY7oDds+g==", "registrations"=>{"name"=>"", "last_name"=>"", "email"=>"", "phone"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+No template found for RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 77ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 23:19:33 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 49ms (Views: 47.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for ::1 at 2019-05-16 23:19:46 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bc7UHmuauMGT04uwp+6U5TbIa2dvFnPc/lqcu/IOU1QCH6W4IEXUp6+3hmN/j6al9e/2IRz+6EaA2/SAIghtuw==", "registrations"=>{"name"=>"a", "last_name"=>"a", "email"=>"ea@dsd.cl", "phone"=>"75884677", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+No template found for RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 81ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 23:22:22 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/views/registrations/new.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting ')'
+...nd=( f.submit "Sign in" onclick=alert("hola"));@output_buffe...
+...                        ^~~~~~~):
+  
+app/views/registrations/new.html.erb:27: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/sign_in" for ::1 at 2019-05-16 23:22:40 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    24: 	    <%= f.password_field :password, autocomplete: "off" %>
+    25: 	</div>
+    26: 	<div class="actions">
+    27: 	    <%= f.submit "Sign in", onclick=alert("hola")%>
+    28: 	</div>
+    29: <% end %>
+  
+app/views/registrations/new.html.erb:27:in `block in _app_views_registrations_new_html_erb___4461603324153207029_46970581376160'
+app/views/registrations/new.html.erb:2:in `_app_views_registrations_new_html_erb___4461603324153207029_46970581376160'
+Started GET "/sign_in" for ::1 at 2019-05-16 23:36:37 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 57ms (Views: 54.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 23:39:00 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 89ms (Views: 88.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 23:39:36 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 73ms (Views: 69.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 23:39:38 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 47ms (Views: 45.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 23:40:14 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 55ms (Views: 53.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 23:40:39 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 58ms (Views: 56.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 23:40:41 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 54ms (Views: 53.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 23:41:03 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 70ms (Views: 68.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 23:41:31 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 79ms (Views: 77.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 23:41:56 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 52ms (Views: 51.3ms | ActiveRecord: 0.0ms)
+
+
