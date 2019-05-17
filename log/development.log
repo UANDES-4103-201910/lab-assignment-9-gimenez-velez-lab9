@@ -2105,3 +2105,589 @@ true by adding the following to your application.rb file:
 
   Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
  (called from <top (required)> at /home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9-8acc4f86fb25408da34b9f4b8853ee177b2fe3c4/app/models/application_record.rb:1)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/fede/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+Started GET "/" for 127.0.0.1 at 2019-05-16 19:10:47 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (541.2ms)
+Completed 200 OK in 1979ms (Views: 1963.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for 127.0.0.1 at 2019-05-16 19:10:55 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (1000.9ms)
+Completed 200 OK in 1091ms (Views: 1081.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for 127.0.0.1 at 2019-05-16 19:11:18 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wgQK++jBHdAFakwYl38deDaGbGpKJLCwHLYB1IQyuBX0ugnvGjeqPWlA0LMV178a63sUC7V25SL88Z5R7tsLAg==", "registrations"=>{"name"=>"Federico", "last_name"=>"Gimenez", "email"=>"fjgimenez@miuandes.cl", "phone"=>"82341466", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+No template found for RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 186ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-05-16 19:11:27 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EWBsKH2ukKJEKm7KSC5ta1dwKFeEcnBDcDhxN+CxX7Jq+GSxvqyKRnrtGnZ8ub/R4WAE7m4hauTEfOAzotbv+A==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 140ms (ActiveRecord: 0.0ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/fede/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+Started GET "/" for ::1 at 2019-05-16 20:42:57 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (65.0ms)
+Completed 200 OK in 1485ms (Views: 1465.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-16 20:43:02 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k5pABl1/T/E+/E58I9Q3CdLll8WPSa2EnJqilEhuOvoxKvOobk6IJNkVYWwkN3vlAykEcKQCsaPzkGLZwbALIQ==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 202ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 20:43:04 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (135.5ms)
+Completed 200 OK in 236ms (Views: 232.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 20:50:17 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 127ms (Views: 116.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 20:50:21 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 151ms (Views: 143.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for ::1 at 2019-05-16 20:50:25 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oQI9a+kSLdUocNdpLdy2xo7HE56448EronFS6Hwx+29/Sgyk4UeCwT/S48lyXM5jOwkvKZaGjAqjw11JA/8VuA==", "registrations"=>{"name"=>"", "last_name"=>"", "email"=>"", "phone"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+No template found for RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 238ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 20:50:30 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 153ms (Views: 148.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 20:52:12 -0400
+  
+ArgumentError (You should not use the `match` method in your router without specifying an HTTP method.
+If you want to expose your action to both GET and POST, add `via: [:get, :post]` option.
+If you want to expose your action to GET, use `get` in the router:
+  Instead of: match "controller#action"
+  Do: get "controller#action"):
+  
+config/routes.rb:15:in `block in <top (required)>'
+config/routes.rb:1:in `<top (required)>'
+Started GET "/" for ::1 at 2019-05-16 20:55:44 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 120ms (Views: 108.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-16 21:09:53 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7ftBUV1I04OUBPG+nY2PUao4rTBUnS84hR2JxrSq+GdPS/L/bnkUVnPt3q6absO9e/Q+hX/WMx/qF0mLPXTJvA==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 217ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 21:09:55 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 124ms (Views: 120.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for ::1 at 2019-05-16 21:09:57 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i9nSazpzs3jN4hyR6R6C84uLVnYKBotOwvvs68wCcqNVkeOkMiYcbNpAKDG2nvpWPkVqwSRjxm/DSeNKs8ycdA==", "registrations"=>{"name"=>"", "last_name"=>"", "email"=>"", "phone"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+No template found for RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 270ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 21:18:06 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 118ms (Views: 115.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-16 21:18:11 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"spebTppRGQpJun1DHNlNgRt5NeRKqljHtdj6PwnsRDgQJyjgqWDe365TUlMbOgFtyrWmUWHhRODa0jpygDJ14w==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 226ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 21:18:13 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 121ms (Views: 111.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 21:18:17 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 112ms (Views: 109.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-16 21:19:57 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0CIYjyQtfOIUvxoY5HtDDwtOa0Th7NE559dyIkCPWJRykqshFxy7N/NWNQjjmA/j2oL48cqnzR6I3bJvyVFpTw==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 256ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 21:19:58 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 141ms (Views: 138.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 21:21:26 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 122ms (Views: 119.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 21:21:32 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 108ms (Views: 100.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-16 21:21:35 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SEQeg8y+IeTLeI/73ejSfmMxrhmTKnjVa0JB7SW+Wv/q9K0t/4/mMSyRoOvaC56Ssv09rLhhZPIESIGgrGBrJA==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 251ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 21:21:37 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 137ms (Views: 128.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for ::1 at 2019-05-16 21:21:38 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vaLuHyvx3Z+D0+sj1Cfbp6NQcjVIENC7QnzuxoTFRL1j6t/QI6Ryi5Rx34OLp6MCFp5OgmZ1nZpDzuFn+wuqag==", "registrations"=>{"name"=>"", "last_name"=>"", "email"=>"", "phone"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+No template found for RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 202ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 21:27:04 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 1217ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user_google_oauth2_omniauth_authorize_path' for #<#<Class:0x00007f174e550778>:0x00007f174e54e4a0>):
+    12:     <nav class="navbar">
+    13: 
+    14:         <button>Log in</button>
+    15:         <button><%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %></button>
+    16: 
+    17:     </nav>
+    18:   	<p id="notice"><%= notice %></p>
+  
+app/views/layouts/application.html.erb:15:in `_app_views_layouts_application_html_erb__2999361694476429571_69869037562500'
+Started GET "/" for ::1 at 2019-05-16 21:27:43 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 107ms (Views: 103.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-16 21:27:52 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DX7lbt7EgNYM9rbGiqyi9Tit/FT+gpcjqFjjqKZ4in6vzlbA7fVHA+sfmdaNT+4Z6WFv4dXJiwTHUiPlL6a7pQ==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 232ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 21:28:22 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 164ms (Views: 135.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-16 21:28:25 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"M7Mf4LTn+x5OJx0E38b00wQkOWP9LOXP31wKxlxEaaCRA6xOh9Y8y6nOMhTYJbg/1eiq1tZn+eiwVsqL1ZpYew==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 230ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 21:29:30 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 97ms (Views: 94.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-16 21:29:33 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uGW6rnNUhFbJErjbwYuCmDkXA9642t3AsVveu6RgPMEa1QkAQGVDgy77l8vGaM506NuQa5ORwefeUR72Lb4NGg==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 242ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 21:29:35 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 123ms (Views: 115.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for ::1 at 2019-05-16 21:29:55 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GcixvgKowBXFXjzxTJbdO9dScwKj/qC8C1nlzKRma7DHgIBxCv1vAdL8CFETFqWeYpxPtY2b7Z0K6+pt26iFZw==", "registrations"=>{"name"=>"Federico", "last_name"=>"Gimenez", "email"=>"fjgimenez@miuandes.cl", "phone"=>"82341466", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+No template found for RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 252ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 21:33:06 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 126ms (Views: 122.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 21:34:21 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 117ms (Views: 114.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 21:34:27 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 84ms (Views: 74.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 21:34:31 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 108ms (Views: 105.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for ::1 at 2019-05-16 21:34:32 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GqPuQh5WKfkF7YBItN15IsLLnMRqk7xScuBXStxXZF/E69+NFgOG7RJPtOjrXQGHdwWgc0T28XNzUljro5mKiA==", "registrations"=>{"name"=>"", "last_name"=>"", "email"=>"", "phone"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+No template found for RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 213ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 21:36:14 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 93ms (Views: 90.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-16 21:36:29 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8gLOfD/7rpUzFpPktvIXnrDbvVhlNDkj8MxeSS9kyc5Qsn3SDMppQNT/vPSxEVtyYRcu7U5/JQSfxp4Eprr4FQ==", "session"=>{"email"=>"ffdsafdsa@fdsfad", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "ffdsafdsa@fdsfad"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 21:36:29 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 100ms (Views: 91.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 21:38:33 -0400
+Processing by SessionsController#new as HTML
+Completed 401 Unauthorized in 27ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-16 21:38:34 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1210.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1238.4ms)
+Completed 500 Internal Server Error in 1301ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `omniauth_authorize_path' for #<#<Class:0x00007f17540b7cb0>:0x00007f17540b4b28>):
+    20: 
+    21: <%- if devise_mapping.omniauthable? %>
+    22:   <%- resource_class.omniauth_providers.each do |provider| %>
+    23:     <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
+    24:   <% end %>
+    25: <% end %>
+  
+app/views/devise/shared/_links.html.erb:23:in `block in _app_views_devise_shared__links_html_erb___4364224980727697832_69869152319560'
+app/views/devise/shared/_links.html.erb:22:in `each'
+app/views/devise/shared/_links.html.erb:22:in `_app_views_devise_shared__links_html_erb___4364224980727697832_69869152319560'
+app/views/devise/sessions/new.html.erb:26:in `_app_views_devise_sessions_new_html_erb___3464144693138928137_69869085456440'
+Started GET "/users/sign_in" for ::1 at 2019-05-16 21:39:23 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1137.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1153.5ms)
+Completed 500 Internal Server Error in 1226ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `omniauth_authorize_path' for #<#<Class:0x00007f174d1150d8>:0x00007f174d10c140>):
+    20: 
+    21: <%- if devise_mapping.omniauthable? %>
+    22:   <%- resource_class.omniauth_providers.each do |provider| %>
+    23:     <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
+    24:   <% end %>
+    25: <% end %>
+  
+app/views/devise/shared/_links.html.erb:23:in `block in _app_views_devise_shared__links_html_erb___4364224980727697832_69869024612820'
+app/views/devise/shared/_links.html.erb:22:in `each'
+app/views/devise/shared/_links.html.erb:22:in `_app_views_devise_shared__links_html_erb___4364224980727697832_69869024612820'
+app/views/devise/sessions/new.html.erb:26:in `_app_views_devise_sessions_new_html_erb___3464144693138928137_69869024921300'
+Started GET "/users" for ::1 at 2019-05-16 21:39:30 -0400
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-16 21:39:30 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1233.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1245.0ms)
+Completed 500 Internal Server Error in 1256ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `omniauth_authorize_path' for #<#<Class:0x00007f174d1150d8>:0x000055b3308fc4b8>):
+    20: 
+    21: <%- if devise_mapping.omniauthable? %>
+    22:   <%- resource_class.omniauth_providers.each do |provider| %>
+    23:     <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
+    24:   <% end %>
+    25: <% end %>
+  
+app/views/devise/shared/_links.html.erb:23:in `block in _app_views_devise_shared__links_html_erb___4364224980727697832_47114050073320'
+app/views/devise/shared/_links.html.erb:22:in `each'
+app/views/devise/shared/_links.html.erb:22:in `_app_views_devise_shared__links_html_erb___4364224980727697832_47114050073320'
+app/views/devise/sessions/new.html.erb:26:in `_app_views_devise_sessions_new_html_erb___3464144693138928137_47114051072640'
+Started GET "/" for ::1 at 2019-05-16 21:39:37 -0400
+Processing by SessionsController#new as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-16 21:39:37 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (902.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (914.4ms)
+Completed 500 Internal Server Error in 924ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `omniauth_authorize_path' for #<#<Class:0x00007f174d1150d8>:0x00007f174e5472e0>):
+    20: 
+    21: <%- if devise_mapping.omniauthable? %>
+    22:   <%- resource_class.omniauth_providers.each do |provider| %>
+    23:     <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
+    24:   <% end %>
+    25: <% end %>
+  
+app/views/devise/shared/_links.html.erb:23:in `block in _app_views_devise_shared__links_html_erb___4364224980727697832_69869037504020'
+app/views/devise/shared/_links.html.erb:22:in `each'
+app/views/devise/shared/_links.html.erb:22:in `_app_views_devise_shared__links_html_erb___4364224980727697832_69869037504020'
+app/views/devise/sessions/new.html.erb:26:in `_app_views_devise_sessions_new_html_erb___3464144693138928137_69869037563540'
+Started GET "/users/sign_in" for ::1 at 2019-05-16 21:39:39 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1101.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1109.7ms)
+Completed 500 Internal Server Error in 1118ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `omniauth_authorize_path' for #<#<Class:0x00007f174d1150d8>:0x00007f174e22d8c0>):
+    20: 
+    21: <%- if devise_mapping.omniauthable? %>
+    22:   <%- resource_class.omniauth_providers.each do |provider| %>
+    23:     <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
+    24:   <% end %>
+    25: <% end %>
+  
+app/views/devise/shared/_links.html.erb:23:in `block in _app_views_devise_shared__links_html_erb___4364224980727697832_69869035842420'
+app/views/devise/shared/_links.html.erb:22:in `each'
+app/views/devise/shared/_links.html.erb:22:in `_app_views_devise_shared__links_html_erb___4364224980727697832_69869035842420'
+app/views/devise/sessions/new.html.erb:26:in `_app_views_devise_sessions_new_html_erb___3464144693138928137_69869035937860'
+Started GET "/users/sign_in" for ::1 at 2019-05-16 21:39:55 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1088.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1104.9ms)
+Completed 500 Internal Server Error in 1174ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `omniauth_authorize_path' for #<#<Class:0x00007f174d7e28e8>:0x00007f174d7cdc40>):
+    20: 
+    21: <%- if devise_mapping.omniauthable? %>
+    22:   <%- resource_class.omniauth_providers.each do |provider| %>
+    23:     <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
+    24:   <% end %>
+    25: <% end %>
+  
+app/views/devise/shared/_links.html.erb:23:in `block in _app_views_devise_shared__links_html_erb___4364224980727697832_69869031373000'
+app/views/devise/shared/_links.html.erb:22:in `each'
+app/views/devise/shared/_links.html.erb:22:in `_app_views_devise_shared__links_html_erb___4364224980727697832_69869031373000'
+app/views/devise/sessions/new.html.erb:26:in `_app_views_devise_sessions_new_html_erb___3464144693138928137_69869030772080'
+Started GET "/" for ::1 at 2019-05-16 21:40:09 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 90ms (Views: 88.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2019-05-16 21:40:15 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 91ms (Views: 87.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for ::1 at 2019-05-16 21:40:20 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (15.2ms)
+  Rendered users/new.html.erb within layouts/application (17.1ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <%= form_with(model: user, local: true) do |form| %>
+    2:   <% if user.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    5: 
+  
+app/views/users/_form.html.erb:2:in `block in _app_views_users__form_html_erb__317154736041735775_47114043845960'
+app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb__317154736041735775_47114043845960'
+app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb___3945589822534057773_47114048340000'
+Started GET "/" for ::1 at 2019-05-16 21:40:26 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 94ms (Views: 89.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 21:40:30 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 103ms (Views: 100.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for ::1 at 2019-05-16 21:40:48 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XjJ+5mDP2QRWxVqJ8mEwS0bVLV9jSP+UnPMV3N//WE+Aek8paJp2EEFnbimt4Uju8xsR6E0tsrWdQRp9oDG2mA==", "registrations"=>{"name"=>"Federico", "last_name"=>"Gimenez", "email"=>"fjgimenez@miuandes.cl", "phone"=>"82341466", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+No template found for RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 202ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 21:43:14 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 91ms (Views: 88.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for ::1 at 2019-05-16 21:43:25 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fMnksZye57p/bksHiX77gvssZwqqtprL4aWTF+bLEUXeeVcfr68gb5iHZBeOnbduKuD0v4H9huyOr1NabxUgng==", "registrations"=>{"name"=>"Federico", "last_name"=>"Gimenez", "email"=>"fjgimenez@miuandes.cl", "phone"=>"82341466", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+No template found for RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 191ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 21:44:36 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 91ms (Views: 83.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-16 21:44:56 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/mVXn+hRcqSa+HGyM8z2QPxuWmhGCT9iKGdTeHn2NoFc1eQx22C1cX0RXqI0L7qsLaLJ3W1CI0VHbZM18CgHWg==", "session"=>{"email"=>"fjgimenez@uandes.cl", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "fjgimenez@uandes.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 23ms (ActiveRecord: 8.6ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 21:44:56 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 119ms (Views: 113.2ms | ActiveRecord: 0.0ms)
+
+
