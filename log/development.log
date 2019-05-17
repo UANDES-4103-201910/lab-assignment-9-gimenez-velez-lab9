@@ -2914,3 +2914,142 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 54ms (Views: 52.4ms | ActiveRecord: 0.0ms)
 
 
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+Started GET "/" for ::1 at 2019-05-16 22:45:55 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 300ms (Views: 293.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 22:45:57 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (41.1ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `deep_stringify_keys' for "/":String):
+    24: 	    <%= f.password_field :password, autocomplete: "off" %>
+    25: 	</div>
+    26: 	<div class="actions">
+    27: 	    <%= f.submit "Sign in" ,root_path%>
+    28: 	</div>
+    29: <% end %>
+  
+app/views/registrations/new.html.erb:27:in `block in _app_views_registrations_new_html_erb___631685396587971638_70355087649940'
+app/views/registrations/new.html.erb:2:in `_app_views_registrations_new_html_erb___631685396587971638_70355087649940'
+Started GET "/sign_in" for ::1 at 2019-05-16 22:47:11 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (593.1ms)
+Completed 500 Internal Server Error in 610ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `sessions_path' for #<#<Class:0x00007ff9a403d130>:0x00007ff995ba1b20>
+Did you mean?  session_path):
+    24: 	    <%= f.password_field :password, autocomplete: "off" %>
+    25: 	</div>
+    26: 	<div class="actions">
+    27: 	    <%= f.submit "Sign in" ,sessions_path%>
+    28: 	</div>
+    29: <% end %>
+  
+app/views/registrations/new.html.erb:27:in `block in _app_views_registrations_new_html_erb___631685396587971638_70354967794300'
+app/views/registrations/new.html.erb:2:in `_app_views_registrations_new_html_erb___631685396587971638_70354967794300'
+Started GET "/sign_in" for ::1 at 2019-05-16 22:48:12 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (479.9ms)
+Completed 500 Internal Server Error in 492ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `home' for #<#<Class:0x00007ff9a403d130>:0x00007ff994ff3d00>):
+    24: 	    <%= f.password_field :password, autocomplete: "off" %>
+    25: 	</div>
+    26: 	<div class="actions">
+    27: 	    <%= f.submit "Sign in" , home%>
+    28: 	</div>
+    29: <% end %>
+  
+app/views/registrations/new.html.erb:27:in `block in _app_views_registrations_new_html_erb___631685396587971638_70354961705100'
+app/views/registrations/new.html.erb:2:in `_app_views_registrations_new_html_erb___631685396587971638_70354961705100'
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+Started GET "/sign_in" for ::1 at 2019-05-16 22:50:14 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (561.5ms)
+Completed 500 Internal Server Error in 582ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_user_session' for #<#<Class:0x00005619a0548908>:0x00005619a055a2e8>
+Did you mean?  new_user_session_url):
+    24: 	    <%= f.password_field :password, autocomplete: "off" %>
+    25: 	</div>
+    26: 	<div class="actions">
+    27: 	    <%= f.submit "Sign in" , new_user_session%>
+    28: 	</div>
+    29: <% end %>
+  
+app/views/registrations/new.html.erb:27:in `block in _app_views_registrations_new_html_erb__1972388901651431162_47334032034600'
+app/views/registrations/new.html.erb:2:in `_app_views_registrations_new_html_erb__1972388901651431162_47334032034600'
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
