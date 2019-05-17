@@ -4606,3 +4606,609 @@ ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.pro
   
 app/models/user.rb:15:in `from_omniauth'
 app/controllers/callbacks_controller.rb:4:in `google_oauth2'
+Started GET "/users/auth/google_oauth2/callback?state=8f0962bc1dbb2a8442c9c14842b4bc3b26a455bf97fa2b1c&code=4/TQH8CdwOiaNSZlJ6JhnZ0k-EGWkDXrCC4VOASkaF4uQ3VNKglj57Rl8VlAMGCdlbcyXutmPGT7kLc2TAFYpEjgQ&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile" for ::1 at 2019-05-17 01:40:45 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"state"=>"8f0962bc1dbb2a8442c9c14842b4bc3b26a455bf97fa2b1c", "code"=>"4/TQH8CdwOiaNSZlJ6JhnZ0k-EGWkDXrCC4VOASkaF4uQ3VNKglj57Rl8VlAMGCdlbcyXutmPGT7kLc2TAFYpEjgQ", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-17 01:40:45 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 68ms (Views: 39.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-17 01:40:48 -0400
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-17 01:40:48 -0400
+Started GET "/users/auth/google_oauth2/callback?state=d6b79d69ac7c3cf3e0650eb5225e926a2410ac77784ca922&code=4/TQE9HWLIKsfpNt2JOuMXNpBKw490infTm9PDqtuULTEoHXxndPE-Y6wQ10y6EKK9BVve1QGgED4Elw9i6bNREyk&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email" for ::1 at 2019-05-17 01:40:48 -0400
+Processing by CallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"d6b79d69ac7c3cf3e0650eb5225e926a2410ac77784ca922", "code"=>"4/TQE9HWLIKsfpNt2JOuMXNpBKw490infTm9PDqtuULTEoHXxndPE-Y6wQ10y6EKK9BVve1QGgED4Elw9i6bNREyk", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "100813729168531916441"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.provider: SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?):
+  
+app/models/user.rb:15:in `from_omniauth'
+app/controllers/callbacks_controller.rb:3:in `google_oauth2'
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (14.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+Started GET "/" for ::1 at 2019-05-17 01:46:46 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 191ms (Views: 184.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-17 01:46:48 -0400
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-17 01:46:48 -0400
+Started GET "/users/auth/google_oauth2/callback?state=ac4e50e98a3e8751a1db0bc16dcec6c3f3e0910a8b046fda&code=4/TQF2_0rnV8xAZHEAHzARbu1LiT2JX_BoBG-i88JfdHusdaccDBLWcX39XYS5TMbnV09jXOYa2Al66Y7kcwoZ_D4&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile" for ::1 at 2019-05-17 01:46:49 -0400
+Processing by CallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"ac4e50e98a3e8751a1db0bc16dcec6c3f3e0910a8b046fda", "code"=>"4/TQF2_0rnV8xAZHEAHzARbu1LiT2JX_BoBG-i88JfdHusdaccDBLWcX39XYS5TMbnV09jXOYa2Al66Y7kcwoZ_D4", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "100813729168531916441"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.provider: SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?):
+  
+app/models/user.rb:15:in `from_omniauth'
+app/controllers/callbacks_controller.rb:3:in `google_oauth2'
+Started GET "/users/auth/google_oauth2/callback?state=ac4e50e98a3e8751a1db0bc16dcec6c3f3e0910a8b046fda&code=4/TQF2_0rnV8xAZHEAHzARbu1LiT2JX_BoBG-i88JfdHusdaccDBLWcX39XYS5TMbnV09jXOYa2Al66Y7kcwoZ_D4&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile" for ::1 at 2019-05-17 01:47:51 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"state"=>"ac4e50e98a3e8751a1db0bc16dcec6c3f3e0910a8b046fda", "code"=>"4/TQF2_0rnV8xAZHEAHzARbu1LiT2JX_BoBG-i88JfdHusdaccDBLWcX39XYS5TMbnV09jXOYa2Al66Y7kcwoZ_D4", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 17ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-17 01:47:52 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 67ms (Views: 37.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-17 01:47:53 -0400
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-17 01:47:53 -0400
+Started GET "/users/auth/google_oauth2/callback?state=60d91dee7169d2f08662eaf20a78fca00a99ab6fa7a34fc9&code=4/TQGhlY6COUkBrMuUHjYHrSSTECZEDZ6SHDJm-hFrZB_EaB_LsfBiSXopmqfrCieTZjYT16v_CqwuJAO6RUOcSZc&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile" for ::1 at 2019-05-17 01:47:54 -0400
+Processing by CallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"60d91dee7169d2f08662eaf20a78fca00a99ab6fa7a34fc9", "code"=>"4/TQGhlY6COUkBrMuUHjYHrSSTECZEDZ6SHDJm-hFrZB_EaB_LsfBiSXopmqfrCieTZjYT16v_CqwuJAO6RUOcSZc", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "100813729168531916441"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.provider: SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?):
+  
+app/models/user.rb:15:in `from_omniauth'
+app/controllers/callbacks_controller.rb:3:in `google_oauth2'
+Started GET "/users/auth/google_oauth2/callback?state=60d91dee7169d2f08662eaf20a78fca00a99ab6fa7a34fc9&code=4/TQGhlY6COUkBrMuUHjYHrSSTECZEDZ6SHDJm-hFrZB_EaB_LsfBiSXopmqfrCieTZjYT16v_CqwuJAO6RUOcSZc&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile" for ::1 at 2019-05-17 01:48:45 -0400
+Processing by CallbacksController#failure as HTML
+  Parameters: {"state"=>"60d91dee7169d2f08662eaf20a78fca00a99ab6fa7a34fc9", "code"=>"4/TQGhlY6COUkBrMuUHjYHrSSTECZEDZ6SHDJm-hFrZB_EaB_LsfBiSXopmqfrCieTZjYT16v_CqwuJAO6RUOcSZc", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-17 01:48:45 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (4.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 97ms (Views: 67.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-17 01:48:46 -0400
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-17 01:48:46 -0400
+Started GET "/users/auth/google_oauth2/callback?state=600d60b16e4db7cb25e9b3897d79e94d8e18a00f6f6d6442&code=4/TQH5FkLDi0QydKyfUpzHwf-E8pn2eW6zD6Bxc7XwrhDzgpdt09ShyzeekUaSUpe5prVfeEqhw_QxTYU_LyD8D7c&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile" for ::1 at 2019-05-17 01:48:47 -0400
+Processing by CallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"600d60b16e4db7cb25e9b3897d79e94d8e18a00f6f6d6442", "code"=>"4/TQH5FkLDi0QydKyfUpzHwf-E8pn2eW6zD6Bxc7XwrhDzgpdt09ShyzeekUaSUpe5prVfeEqhw_QxTYU_LyD8D7c", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "100813729168531916441"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.provider: SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?):
+  
+app/models/user.rb:15:in `from_omniauth'
+app/controllers/callbacks_controller.rb:3:in `google_oauth2'
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+Started GET "/users/auth/google_oauth2/callback?state=600d60b16e4db7cb25e9b3897d79e94d8e18a00f6f6d6442&code=4/TQH5FkLDi0QydKyfUpzHwf-E8pn2eW6zD6Bxc7XwrhDzgpdt09ShyzeekUaSUpe5prVfeEqhw_QxTYU_LyD8D7c&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile" for ::1 at 2019-05-17 01:53:44 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CallbacksController#failure as HTML
+  Parameters: {"state"=>"600d60b16e4db7cb25e9b3897d79e94d8e18a00f6f6d6442", "code"=>"4/TQH5FkLDi0QydKyfUpzHwf-E8pn2eW6zD6Bxc7XwrhDzgpdt09ShyzeekUaSUpe5prVfeEqhw_QxTYU_LyD8D7c", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"}
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 22ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2019-05-17 01:53:45 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 431ms (Views: 390.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-17 01:53:47 -0400
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-17 01:53:47 -0400
+Started GET "/users/auth/google_oauth2/callback?state=aa3c43a6e5b84072a893d7aef89c4eddd3ce29213f313a74&code=4/TQHUz9cv3dfyxFeC92XOsXdNxLlfcWoUnmO5vJk90s5kM7g5NoHPU803msjAuQmEPlIeg2pjQbEMRFOLO02b7gs&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile" for ::1 at 2019-05-17 01:53:47 -0400
+Processing by CallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"aa3c43a6e5b84072a893d7aef89c4eddd3ce29213f313a74", "code"=>"4/TQHUz9cv3dfyxFeC92XOsXdNxLlfcWoUnmO5vJk90s5kM7g5NoHPU803msjAuQmEPlIeg2pjQbEMRFOLO02b7gs", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "100813729168531916441"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: users.provider: SELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?):
+  
+app/models/user.rb:15:in `from_omniauth'
+app/controllers/callbacks_controller.rb:3:in `google_oauth2'
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (28.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (30.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180401225453)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "last_name" varchar, "phone" varchar, "password" varchar, "address" varchar, "provider" varchar, "uid" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180401225453"]]
+  [1m[35m (22.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePlaces (20180401225615)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "places" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "address" varchar, "capacity" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180401225615"]]
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateEvents (20180401225731)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "start_date" date, "place_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_b2e7252813"
+FOREIGN KEY ("place_id")
+  REFERENCES "places" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_events_on_place_id" ON "events" ("place_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180401225731"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTickets (20180401225923)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "price" integer, "event_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_4def87ea62"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX "index_tickets_on_event_id" ON "tickets" ("event_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180401225923"]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUserTickets (20180401230354)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "user_tickets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "ticket_id" integer, "time" datetime, "paid" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_a123431d98"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_b7f198ae16"
+FOREIGN KEY ("ticket_id")
+  REFERENCES "tickets" ("id")
+)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_user_tickets_on_user_id" ON "user_tickets" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_user_tickets_on_ticket_id" ON "user_tickets" ("ticket_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180401230354"]]
+  [1m[35m (15.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddDeviseToUsers (20190516221032)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" datetime[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" datetime[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "sign_in_count" integer DEFAULT 0 NOT NULL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "current_sign_in_at" datetime[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "last_sign_in_at" datetime[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "current_sign_in_ip" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "last_sign_in_ip" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190516221032"]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-05-17 06:02:45.600011"], ["updated_at", "2019-05-17 06:02:45.600011"]]
+  [1m[35m (8.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+Started GET "/users" for ::1 at 2019-05-17 02:05:59 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 461ms (Views: 450.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2019-05-17 02:06:00 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 60ms (Views: 59.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-17 02:06:02 -0400
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-17 02:06:02 -0400
+Started GET "/users/auth/google_oauth2/callback?state=c3f54882416c493901d5732a8701c7e17c4949260b857055&code=4/TQGr2bulbcDX4Z27ILWJ8EAK4mEnWtB3PxCKC7WLdcYvfxRoF4zHNt-UVrZWOwm0PgUF5bB0IDfbfYA1_o2w6uI&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile" for ::1 at 2019-05-17 02:06:03 -0400
+Processing by CallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"c3f54882416c493901d5732a8701c7e17c4949260b857055", "code"=>"4/TQGr2bulbcDX4Z27ILWJ8EAK4mEnWtB3PxCKC7WLdcYvfxRoF4zHNt-UVrZWOwm0PgUF5bB0IDfbfYA1_o2w6uI", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "100813729168531916441"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "eivelez@miuandes.cl"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "eivelez@miuandes.cl"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 391ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-05-17 02:06:04 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/shared/_links.html.erb (3.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 140ms (Views: 131.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-17 02:06:14 -0400
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-17 02:06:14 -0400
+Started GET "/users/auth/google_oauth2/callback?state=f441aed7231e1433974ad76e39abb52fdb71005984b42c62&code=4/TQFKeaF09E0DBPv_v_2RiybvNyTcmroqhJD-JhIDPROvBM9x6E0OS8oC0sflIRWhtu5qtXrBP_WudwIpKYJQKHo&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email" for ::1 at 2019-05-17 02:06:14 -0400
+Processing by CallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"f441aed7231e1433974ad76e39abb52fdb71005984b42c62", "code"=>"4/TQFKeaF09E0DBPv_v_2RiybvNyTcmroqhJD-JhIDPROvBM9x6E0OS8oC0sflIRWhtu5qtXrBP_WudwIpKYJQKHo", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "100813729168531916441"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "eivelez@miuandes.cl"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "eivelez@miuandes.cl"], ["LIMIT", 1]]
+  [1m[36mUser Create (5.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "provider", "uid", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "EMILIO IGNACIO VELEZ SAAVEDRA"], ["provider", "google_oauth2"], ["uid", "100813729168531916441"], ["created_at", "2019-05-17 06:06:15.587052"], ["updated_at", "2019-05-17 06:06:15.587052"], ["email", "eivelez@miuandes.cl"], ["encrypted_password", "$2a$11$.7uKLgbuJqtxtBdYXkT1vOOu7MW4H3GkBEq69Dx2yV7qcvSA1/JEq"]]
+  [1m[35m (103.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (2.1ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2019-05-17 06:06:15.735623"], ["sign_in_count", 1], ["current_sign_in_at", "2019-05-17 06:06:15.733147"], ["last_sign_in_at", "2019-05-17 06:06:15.733147"], ["current_sign_in_ip", "::1"], ["last_sign_in_ip", "::1"], ["id", 1]]
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 394ms (ActiveRecord: 118.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-17 02:06:15 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 73ms (Views: 70.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2019-05-17 02:06:43 -0400
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (13.5ms)
+  Rendered users/new.html.erb within layouts/application (15.7ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <%= form_with(model: user, local: true) do |form| %>
+    2:   <% if user.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+    5: 
+  
+app/views/users/_form.html.erb:2:in `block in _app_views_users__form_html_erb___3166966435607647255_70088900808120'
+app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb___3166966435607647255_70088900808120'
+app/views/users/new.html.erb:3:in `_app_views_users_new_html_erb__1583341686503416200_70088900725740'
+Started GET "/users" for ::1 at 2019-05-17 02:06:53 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 51ms (Views: 45.2ms | ActiveRecord: 0.6ms)
+
+
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (43.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (31.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20180401225453)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "last_name" varchar, "phone" varchar, "password" varchar, "address" varchar, "provider" varchar, "uid" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (7.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180401225453"]]
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePlaces (20180401225615)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "places" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "address" varchar, "capacity" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180401225615"]]
+  [1m[35m (26.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateEvents (20180401225731)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "events" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "start_date" date, "place_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_b2e7252813"
+FOREIGN KEY ("place_id")
+  REFERENCES "places" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_events_on_place_id" ON "events" ("place_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180401225731"]]
+  [1m[35m (19.1ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTickets (20180401225923)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "tickets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "price" integer, "event_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_4def87ea62"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+)[0m
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE  INDEX "index_tickets_on_event_id" ON "tickets" ("event_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180401225923"]]
+  [1m[35m (18.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUserTickets (20180401230354)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "user_tickets" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "ticket_id" integer, "time" datetime, "paid" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_a123431d98"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_b7f198ae16"
+FOREIGN KEY ("ticket_id")
+  REFERENCES "tickets" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_user_tickets_on_user_id" ON "user_tickets" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_user_tickets_on_ticket_id" ON "user_tickets" ("ticket_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180401230354"]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddDeviseToUsers (20190516221032)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "email" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" datetime[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" datetime[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "sign_in_count" integer DEFAULT 0 NOT NULL[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "current_sign_in_at" datetime[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "last_sign_in_at" datetime[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "users" ADD "current_sign_in_ip" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "last_sign_in_ip" varchar[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190516221032"]]
+  [1m[35m (4.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-05-17 06:07:19.985613"], ["updated_at", "2019-05-17 06:07:19.985613"]]
+  [1m[35m (20.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+Started GET "/" for ::1 at 2019-05-17 02:07:36 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 247ms (Views: 233.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-17 02:08:58 -0400
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-17 02:08:58 -0400
+Started GET "/users/auth/google_oauth2/callback?state=40ad68cf074be6e1ec7ce58b715f5df3f979555ef3501baa&code=4%2FTQFcL3oVMIefkkuPqGxG6go4N4hOpz5pIxU_qWvcVfedUZBbSzqAaBsO5-pS1jzWEJPXG_xXBYUP4kfdSzAPAaM&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile" for ::1 at 2019-05-17 02:09:16 -0400
+Processing by CallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"40ad68cf074be6e1ec7ce58b715f5df3f979555ef3501baa", "code"=>"4/TQFcL3oVMIefkkuPqGxG6go4N4hOpz5pIxU_qWvcVfedUZBbSzqAaBsO5-pS1jzWEJPXG_xXBYUP4kfdSzAPAaM", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "100813729168531916441"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "eivelez@miuandes.cl"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "eivelez@miuandes.cl"], ["LIMIT", 1]]
+  [1m[36mUser Create (7.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "provider", "uid", "created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "EMILIO IGNACIO VELEZ SAAVEDRA"], ["provider", "google_oauth2"], ["uid", "100813729168531916441"], ["created_at", "2019-05-17 06:09:17.994877"], ["updated_at", "2019-05-17 06:09:17.994877"], ["email", "eivelez@miuandes.cl"], ["encrypted_password", "$2a$11$VUCk/zI4bxlV45Cl8moaWeia2anENAMhyhdyosfwPty1erQw60xda"]]
+  [1m[35m (33.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (2.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (3.7ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2019-05-17 06:09:18.073433"], ["sign_in_count", 1], ["current_sign_in_at", "2019-05-17 06:09:18.070716"], ["last_sign_in_at", "2019-05-17 06:09:18.070716"], ["current_sign_in_ip", "::1"], ["last_sign_in_ip", "::1"], ["id", 1]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 566ms (ActiveRecord: 53.3ms)
+
+
+Started GET "/" for ::1 at 2019-05-17 02:09:18 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 60ms (Views: 55.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-17 02:09:25 -0400
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-17 02:09:25 -0400
+Started GET "/users/auth/google_oauth2/callback?state=d91a73bd4ba99ff721baa1790e1795c6234ec3d6715e9aed&code=4/TQHdwrYx-Ufm5fLmx237_rALdb4ThbL1IIF8wcD8sRlo8idCpvmFAzZzpkfvqsy31sKZ9Irbfl3AlRZ9tqdcGsc&scope=email+profile+https://www.googleapis.com/auth/userinfo.profile+https://www.googleapis.com/auth/userinfo.email" for ::1 at 2019-05-17 02:09:26 -0400
+Processing by CallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"d91a73bd4ba99ff721baa1790e1795c6234ec3d6715e9aed", "code"=>"4/TQHdwrYx-Ufm5fLmx237_rALdb4ThbL1IIF8wcD8sRlo8idCpvmFAzZzpkfvqsy31sKZ9Irbfl3AlRZ9tqdcGsc", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "100813729168531916441"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-05-17 02:09:26 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 92ms (Views: 87.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2019-05-17 02:09:31 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 92ms (Views: 87.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for ::1 at 2019-05-17 02:09:35 -0400
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of nil into String):
+    1: <p id="notice"><%= notice %></p>
+    2: <h1><%= @user.name + @user.last_name %> </h2>
+    3: <h2><%= @user.email %></h2>
+    4: <h2><%= @user.phone %></h2>
+    5: <h2><%= @user.password %></h2>
+  
+app/views/users/show.html.erb:2:in `+'
+app/views/users/show.html.erb:2:in `_app_views_users_show_html_erb__941278652262370902_70329064862240'
+Started GET "/users" for ::1 at 2019-05-17 02:09:40 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 72ms (Views: 70.7ms | ActiveRecord: 0.1ms)
+
+
