@@ -11,9 +11,9 @@
   <body>
     <nav class="navbar">
         <button>Log in</button>
-        <button>Log in with Google</button>
+        <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
     </nav>
-    
+
   	<p id="notice"><%= notice %></p>
     <p id="alert"><%= alert %></p>
     <%= yield %>
