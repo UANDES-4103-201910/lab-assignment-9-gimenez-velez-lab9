@@ -2691,3 +2691,226 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 119ms (Views: 113.2ms | ActiveRecord: 0.0ms)
 
 
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/vm/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+Started GET "/" for ::1 at 2019-05-16 22:08:12 -0400
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 894ms (Views: 888.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 22:08:17 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 106ms (Views: 101.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 22:08:24 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 65ms (Views: 61.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for ::1 at 2019-05-16 22:08:25 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3IEbT5EAOrLPCS37eyS+c8vpKyup3+4E1bYmVoWzN9uibyuLQEBmFn9NKsmpRzqPhDb8sFuloV7JtDN1crSHXA==", "registrations"=>{"name"=>"", "last_name"=>"", "email"=>"", "phone"=>"", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+No template found for RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 101ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 22:08:27 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 103ms (Views: 98.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for ::1 at 2019-05-16 22:08:47 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5IhFP0CpOcueP+ctsnmIEDINuaXgJlPLp45MyoK/joHjWTSZC3ZVraJb6v5qGLpQ8Sok45POyFHZDyTxUrmwbg==", "registrations"=>{"name"=>"Emilio", "last_name"=>"Velez", "email"=>"eivelez@uc.cl", "phone"=>"75884677", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+No template found for RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 108ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 22:08:50 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 117ms (Views: 109.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-16 22:09:05 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aFpTpuOF2wkP6ILlPn6NNBpsjD3cp7lnOWDthjrr99VviyIAqFq3bzOMjzbmH7902UsRe69PIv1H4YW96u3JOg==", "session"=>{"email"=>"eivelez@uc.c", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "eivelez@uc.c"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 20ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 22:09:05 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 89ms (Views: 86.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-16 22:09:17 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r17NUht3/lEipgaoGx/gv8jXdHSosWK6rOSuLRkJSgGoj7z0UKiSNx7CC3vDftL/C/DpMttZ+SDSZcYWyQ907g==", "session"=>{"email"=>"eiveez@uc.cl", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "eiveez@uc.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 22:09:17 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 63ms (Views: 61.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-16 22:09:24 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"samozymkZeKmT5Ixx7LrHkiiTv1EJozj1q6bV+XhSDO2eNlpYnsJhJorn+If09lei4XTuzfOF3moL/NsNed23A==", "session"=>{"email"=>"eivelez@uc.cl", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "eivelez@uc.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 22:09:24 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 58ms (Views: 53.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-16 22:09:30 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LlOYyUNqDrjtUb7+4N6CeIi+y7O5Dn8G5gEMLJGXy38pgulvCLVi3tE1sy04v7A4S5lW9crm5JyYgGQXQZH1kA==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 22:09:30 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 46ms (Views: 44.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-16 22:09:31 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ebrn3Iitq5FFh1z7cUZ9qjS+ba87e2KW0UCfip8AOyl+a5Z6w3LH93njUSipJ0/q95nw6UiT+QyvwfexTwYFxg==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 22:09:31 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 54ms (Views: 50.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for ::1 at 2019-05-16 22:09:38 -0400
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 80ms (Views: 75.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 22:09:43 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 52ms (Views: 49.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-16 22:09:45 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 72ms (Views: 66.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sign_in" for ::1 at 2019-05-16 22:10:08 -0400
+Processing by RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bkZP7eh6TswsYWzyCdkfdXGzJYHulE41V5OrZCfX57oQqH8pOToSaJwla8DbupuJPmzyGhzuAW9Lkb5H0NBXPQ==", "registrations"=>{"name"=>"emilio", "last_name"=>"velez", "email"=>"eivelez@uc.cl", "phone"=>"75884677", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+No template found for RegistrationsController#create, rendering head :no_content
+Completed 204 No Content in 95ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 22:10:15 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 73ms (Views: 71.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-16 22:10:22 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3/lGsL+pqKIfvpbTochd/mDbxiO43zEb7KYLEd8kE1vYKDcW9HbExCPamwB5qW++o/xbZcs3qoGSJ2MqDyIttA==", "session"=>{"email"=>"eiads@sddf.cl", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "eiads@sddf.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-05-16 22:10:22 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 54ms (Views: 52.4ms | ActiveRecord: 0.0ms)
+
+
