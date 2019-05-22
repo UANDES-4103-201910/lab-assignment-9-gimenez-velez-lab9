@@ -5212,3 +5212,232 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 72ms (Views: 70.7ms | ActiveRecord: 0.1ms)
 
 
+DEPRECATION WARNING: Leaving `ActiveRecord::ConnectionAdapters::SQLite3Adapter.represent_boolean_as_integer`
+set to false is deprecated. SQLite databases have used 't' and 'f' to serialize
+boolean values and must have old data converted to 1 and 0 (its native boolean
+serialization) before setting this flag to true. Conversion can be accomplished
+by setting up a rake task which runs
+
+  ExampleModel.where("boolean_column = 't'").update_all(boolean_column: 1)
+  ExampleModel.where("boolean_column = 'f'").update_all(boolean_column: 0)
+
+for all models and all boolean columns, after which the flag must be set to
+true by adding the following to your application.rb file:
+
+  Rails.application.config.active_record.sqlite3.represent_boolean_as_integer = true
+ (called from <top (required)> at /home/fede/Desktop/lab-assignment-9-gimenez-velez-lab9/app/models/application_record.rb:1)
+Started GET "/sign_in" for ::1 at 2019-05-22 09:36:48 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (193.8ms)
+Completed 200 OK in 1932ms (Views: 1916.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-22 09:37:02 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 57ms (Views: 30.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-22 09:37:32 -0400
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-22 09:37:32 -0400
+Started GET "/users/auth/google_oauth2/callback?state=da58f2f7ec8c72541323788c9b31f9943c6072722239d436&code=4/UgEXnjygx6fzTE07rcm4GHmovsg47etanjKFdLBvd03SH2a0HeUWeF_8pIShdvfAEnLnyIgAF1FamHxaN1xrX6c&scope=email%20profile%20https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/userinfo.profile" for ::1 at 2019-05-22 09:37:43 -0400
+Processing by CallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"da58f2f7ec8c72541323788c9b31f9943c6072722239d436", "code"=>"4/UgEXnjygx6fzTE07rcm4GHmovsg47etanjKFdLBvd03SH2a0HeUWeF_8pIShdvfAEnLnyIgAF1FamHxaN1xrX6c", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "114944292948840616196"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fjgimenez@miuandes.cl"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fjgimenez@miuandes.cl"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 412ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-05-22 09:37:46 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.9ms)
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 135ms (Views: 124.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2019-05-22 09:38:19 -0400
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"w9gTcsSRoxrP8bD1KGr4hUkPkh4sogSYII+V0x4wA55haKDc96BkzygYn+UvibRpmMMBqwfpGL9PhVWel+4yRQ==", "user"=>{"email"=>"fjgimenez@miuandes.cl", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fjgimenez@miuandes.cl"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fjgimenez@miuandes.cl"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "email", "encrypted_password") VALUES (?, ?, ?, ?)[0m  [["created_at", "2019-05-22 13:38:19.852738"], ["updated_at", "2019-05-22 13:38:19.852738"], ["email", "fjgimenez@miuandes.cl"], ["encrypted_password", "$2a$11$5VX5w11JNrsXUtaBBUrakOiH8c4C5WHSu5BXrMt/S5HBYql0fVq9e"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (4.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2019-05-22 13:38:19.870874"], ["sign_in_count", 1], ["current_sign_in_at", "2019-05-22 13:38:19.870197"], ["last_sign_in_at", "2019-05-22 13:38:19.870197"], ["current_sign_in_ip", "::1"], ["last_sign_in_ip", "::1"], ["id", 2]]
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 251ms (ActiveRecord: 18.2ms)
+
+
+Started GET "/" for ::1 at 2019-05-22 09:38:19 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 70ms (Views: 67.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-22 09:38:42 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RzCtMoNuuf4U8pIwx+Vdy4r6l4CG4Pbts8Q5Gaj94pvlgB6csF9+K/MbvSDABhEnWzYENa2r6srczvlUISPTQA==", "session"=>{"email"=>"fjgimenez@miuandes.cl", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "fjgimenez@miuandes.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 75ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2019-05-22 09:38:42 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 59ms (Views: 52.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-22 09:38:49 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"X3nzpL4tSj3nfSLb0zjUevS0LXJwyzW/pwbuhnhjxYb9yUAKjRyN6ACUDcvU25iWJXi+x1uAKZjIDC7L8b30XQ==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2019-05-22 09:38:49 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 59ms (Views: 57.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-22 09:39:59 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QwWHohThs0gQMnGr8dkqOsiO98ZfVql8m1hLNLAbVVzhtTQMJ9B0nffbXrv2OmbWGUJkc3QdtVv0Uot5OcVkhw==", "session"=>{"email"=>"fjgimenez@miuandes.cl", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "fjgimenez@miuandes.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-05-22 09:40:00 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 59ms (Views: 57.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-22 09:40:15 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZRsBgRG6jwVJpRZtQooYUVBVQi0BW5dyqHP+gVfPYFbHq7IvIotI0K5MOX1FaVS9gZnRmCoQi1XHeT7M3hFRjQ==", "session"=>{"email"=>"", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2019-05-22 09:40:15 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 69ms (Views: 63.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-22 09:40:31 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PnposuRtxYTylRPwzzctDmFsfBzg/6XHGmzzKzWuWPqcytsc11wCURV8PODI1GHisKDvqcu0ueB1ZjNmvHBpIQ==", "session"=>{"email"=>"fjgimenez@uandes.cl", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "fjgimenez@uandes.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2019-05-22 09:40:31 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 56ms (Views: 54.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2019-05-22 09:41:11 -0400
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7CkNM59+JpZ96yJB5OhBg8Jdbk1V6pm2REBo8/R0tq1Omb6drE/hQ5oCDVHjCw1vE5H9+H6hhZErSqi+faqHdg==", "session"=>{"email"=>"fjborie@miuandes.cl", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "fjborie@miuandes.cl"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/" for ::1 at 2019-05-22 09:41:11 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 62ms (Views: 58.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-22 09:41:14 -0400
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-22 09:41:14 -0400
+Started GET "/users/auth/google_oauth2/callback?state=8fc6db6f8f91c57325a8aa53d916b7269cc3bacb5d7342e4&code=4/UgGKuRbzA_r1N8OwTsGrwK0TGXOREf95u06DohRX0nkt7RKxXGpR9zkx_hengtIE88KmsqQP9Y-QvhIsLw7EXkc&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile" for ::1 at 2019-05-22 09:41:14 -0400
+Processing by CallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"8fc6db6f8f91c57325a8aa53d916b7269cc3bacb5d7342e4", "code"=>"4/UgGKuRbzA_r1N8OwTsGrwK0TGXOREf95u06DohRX0nkt7RKxXGpR9zkx_hengtIE88KmsqQP9Y-QvhIsLw7EXkc", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "114944292948840616196"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fjgimenez@miuandes.cl"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fjgimenez@miuandes.cl"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 156ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-05-22 09:41:15 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2019-05-22 09:41:15 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 54ms (Views: 51.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/sign_in" for ::1 at 2019-05-22 09:41:27 -0400
+Processing by RegistrationsController#new as HTML
+  Rendering registrations/new.html.erb within layouts/application
+  Rendered registrations/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 95ms (Views: 93.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-22 09:41:58 -0400
+Started GET "/users/auth/google_oauth2" for ::1 at 2019-05-22 09:41:58 -0400
+Started GET "/users/auth/google_oauth2/callback?state=4b2ee1c8b6f6921514549e34c2a81aa5988165a54f3b8e60&code=4/UgFlZ5iThnnMFftvSvvuTZ7T93kYbudZ5NUogq5IS9WzhiR7sL_dGIvzXB9RA6oHUHigqw3uTmmI_ipk9iGsKe8&scope=email+profile+https://www.googleapis.com/auth/userinfo.email+https://www.googleapis.com/auth/userinfo.profile" for ::1 at 2019-05-22 09:41:59 -0400
+Processing by CallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"4b2ee1c8b6f6921514549e34c2a81aa5988165a54f3b8e60", "code"=>"4/UgFlZ5iThnnMFftvSvvuTZ7T93kYbudZ5NUogq5IS9WzhiR7sL_dGIvzXB9RA6oHUHigqw3uTmmI_ipk9iGsKe8", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."provider" = ? AND "users"."uid" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["provider", "google_oauth2"], ["uid", "114944292948840616196"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fjgimenez@miuandes.cl"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists (0.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fjgimenez@miuandes.cl"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Redirected to http://localhost:3000/users/sign_up
+Completed 302 Found in 152ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2019-05-22 09:41:59 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2019-05-22 09:41:59 -0400
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 48ms (Views: 46.0ms | ActiveRecord: 0.0ms)
+
+
