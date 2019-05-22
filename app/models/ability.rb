@@ -11,10 +11,13 @@ class Ability
 
       if user.admin?  # additional permissions for administrators
         can :read, post
+        can :manage, :all if user.role == "admin"
       end
     end
   end
 end
+
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)
