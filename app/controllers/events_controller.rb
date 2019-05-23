@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
   # GET /events
   # GET /events.json
   def index
@@ -10,6 +10,8 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @events = Event.find(params[:id])
+  authorize! :read, @events
   end
 
   # GET /events/new

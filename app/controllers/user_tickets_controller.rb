@@ -10,6 +10,8 @@ class UserTicketsController < ApplicationController
   # GET /user_tickets/1
   # GET /user_tickets/1.json
   def show
+    @user_tickets = UserTicket.find(params[:id])
+  authorize! :read, @user_tickets
   end
 
   # GET /user_tickets/new

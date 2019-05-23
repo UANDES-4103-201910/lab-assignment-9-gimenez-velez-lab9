@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
   # GET /tickets
   # GET /tickets.json
   def index
@@ -10,6 +10,8 @@ class TicketsController < ApplicationController
   # GET /tickets/1
   # GET /tickets/1.json
   def show
+    @tickets = Ticket.find(params[:id])
+  authorize! :read, @tickets
   end
 
   # GET /tickets/new
