@@ -10,6 +10,8 @@ class ShoppingCartsController < ApplicationController
   # GET /shopping_carts/1
   # GET /shopping_carts/1.json
   def show
+    @shopping_carts = ShoppingCart.find(params[:id])
+  authorize! :read, @shopping_carts, :message => "Unable to read this article."
   end
 
   # GET /shopping_carts/new

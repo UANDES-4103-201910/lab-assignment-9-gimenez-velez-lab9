@@ -11,7 +11,7 @@ class TicketsController < ApplicationController
   # GET /tickets/1.json
   def show
     @tickets = Ticket.find(params[:id])
-  authorize! :read, @tickets
+  authorize! :read, @tickets, :message => "Unable to read this article."
   end
 
   # GET /tickets/new
