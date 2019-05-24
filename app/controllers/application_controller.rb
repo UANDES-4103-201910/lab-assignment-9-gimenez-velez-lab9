@@ -6,12 +6,10 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-	#complete this method
+
   end
 
   def is_user_logged_in?
-	#complete this method
-  	logged_in = false
-	if logged_in then true else redirect_to root_path end
+    if current_user then true else redirect_to "http://localhost:3000/users/sign_in" end
   end
 end
