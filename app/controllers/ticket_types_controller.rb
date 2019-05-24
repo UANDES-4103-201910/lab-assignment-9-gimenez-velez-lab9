@@ -10,8 +10,6 @@ class TicketTypesController < ApplicationController
   # GET /ticket_types/1
   # GET /ticket_types/1.json
   def show
-    @ticket_types = TicketType.find(params[:id])
-  authorize! :read, @ticket_types, :message => "Unable to read this article."
   end
 
   # GET /ticket_types/new
@@ -71,6 +69,6 @@ class TicketTypesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ticket_type_params
-      params.fetch(:ticket_type, {})
+      params.require(:ticket_type).permit(:name)
     end
 end

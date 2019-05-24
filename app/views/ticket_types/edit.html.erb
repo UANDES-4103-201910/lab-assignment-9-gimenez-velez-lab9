@@ -1,6 +1,9 @@
 <h1>Editing Ticket Type</h1>
 
-<%= render 'form', ticket_type: @ticket_type %>
-
-<%= link_to 'Show', @ticket_type %> |
-<%= link_to 'Back', ticket_types_path %>
+<% if can? :manage, @ticket_type %>
+    <%= render 'form', ticket_type: @ticket_type %>
+    <%= link_to 'Show', @ticket_type %> |
+    <%= link_to 'Back', ticket_types_path %>
+<% else %>
+    <h4>Access denied</h4>
+<%end%>

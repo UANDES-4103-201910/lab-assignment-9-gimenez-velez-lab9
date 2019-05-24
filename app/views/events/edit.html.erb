@@ -1,6 +1,15 @@
-<h1>Editing Event</h1>
-
-<%= render 'form', event: @event %>
-
-<%= link_to 'Show', @event %> |
-<%= link_to 'Back', events_path %>
+<!DOCTYPE html>
+<html>
+    <h3>Updtate Event</h3>
+    <% if can? :manage, @event %>
+        <%= form_with model: @event do |form| %>
+        <%= form.text_field :name, placeholder: "name" %>
+        <%= form.text_field :description, placeholder: "description" %>
+        <%= form.text_field :start_date, placeholder: "start date" %>
+        <%= form.text_field :place_id, placeholder: "place id" %>
+        <%= form.submit %>
+        <%end%>
+    <% else %>
+        <h4>You shall not pass!</h4>
+    <%end%>
+</html>

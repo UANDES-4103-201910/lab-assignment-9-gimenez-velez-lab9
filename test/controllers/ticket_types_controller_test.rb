@@ -17,7 +17,7 @@ class TicketTypesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create ticket_type" do
     assert_difference('TicketType.count') do
-      post ticket_types_url, params: { ticket_type: {  } }
+      post ticket_types_url, params: { ticket_type: { name: @ticket_type.name } }
     end
 
     assert_redirected_to ticket_type_url(TicketType.last)
@@ -34,7 +34,7 @@ class TicketTypesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update ticket_type" do
-    patch ticket_type_url(@ticket_type), params: { ticket_type: {  } }
+    patch ticket_type_url(@ticket_type), params: { ticket_type: { name: @ticket_type.name } }
     assert_redirected_to ticket_type_url(@ticket_type)
   end
 

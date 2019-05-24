@@ -1,5 +1,8 @@
 <h1>New Ticket Type</h1>
+<% if can? :manage, @ticket_type %>
+    <%= render 'form', ticket_type: @ticket_type %>
 
-<%= render 'form', ticket_type: @ticket_type %>
-
-<%= link_to 'Back', ticket_types_path %>
+    <%= link_to 'Back', ticket_types_path %>
+<% else %>
+    <h4>Access denied</h4>
+<% end %>

@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<h1><%=@event.name%></h1>
+<h4><%= @event.description %></h4>
+<h4><%= @event.start_date %></h4>
+<h4><%= @event.place_id %></h4>
+<%= link_to 'Remove', @event, method: :delete, data: { confirm: 'Are you sure?' } %>
