@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lab4Assignment</title>
+    <title>Lab10Assignment</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,11 +10,9 @@
 
   <body>
     <nav class="navbar">
-
-        <button>Log in</button>
-        <button><%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %></button>
-
-    </nav>
+          <button onclick="document.location.href='http://localhost:3000/users/sign_in'">Log in</button>
+          <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
+      </nav>
   	<p id="notice"><%= notice %></p>
     <%= yield %>
 
