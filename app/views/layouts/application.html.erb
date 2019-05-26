@@ -10,8 +10,10 @@
 
   <body>
     <nav class="navbar">
+          <button onclick="document.location.href='http://localhost:3000/events'">Go to Events!</button>
           <button onclick="document.location.href='http://localhost:3000/users/sign_in'">Log in</button>
           <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
+
       </nav>
   	<p id="notice"><%= notice %></p>
     <%= yield %>
